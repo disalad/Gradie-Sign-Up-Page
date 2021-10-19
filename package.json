@@ -1,0 +1,15 @@
+{
+  "name": "codewell-gradie-project",
+  "src": "https://www.codewell.cc/challenges/gradie-sign-up-page--608ac420650dff001599e8ec",
+  "description": "A project o practice Sass and complete the codewell challenge",
+  "main": "no-js-file",
+  "version": "1.0.0",
+  "scripts": {
+    "dev": "parcel serve index.html"
+  },
+  "keywords": [],
+  "author": "Disala Damsas",
+  "license": "ISC",
+  "devDependencies": {
+  }
+}

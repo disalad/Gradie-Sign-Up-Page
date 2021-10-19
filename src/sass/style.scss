@@ -1,0 +1,276 @@
+@use "./variables" as var;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: roboto-regular;
+}
+
+body {
+  background-image: url(../../src/images/Background.png);
+  background-size: cover !important;
+  display: grid;
+  place-items: center;
+  min-height: 100vh;
+}
+
+.container {
+  @include var.flexCenter(center, center, row, wrap);
+  height: 100vh;
+
+  .left {
+    background-color: var.$dark-greenish-blue;
+    border-top-left-radius: 0.5em;
+    border-bottom-left-radius: 0.5em;
+    border: 0.1em solid #000;
+    position: relative;
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    grid-template-rows: repeat(3, 1fr);
+
+    #left-titles {
+      @include var.flexCenter(center, center, column, nowrap);
+      height: 25%;
+      margin-top: 0.25em;
+      position: relative;
+      top: -1em;
+
+      h1 {
+        color: #ffffff;
+        font-size: 2em;
+        font-weight: 900;
+      }
+
+      h2 {
+        font-weight: 700;
+        font-family: roboto-light;
+        font-size: 0.85em;
+        color: #b8cfd8;
+        margin-top: 0.5em;
+        letter-spacing: 0.1em;
+      }
+    }
+
+    #iphone-img {
+      width: 100% !important;
+      height: 100%;
+      position: absolute;
+      bottom: 0;
+    }
+  }
+
+  .right {
+    background-color: #ffffff;
+    border-top-right-radius: 0.5em;
+    border-bottom-right-radius: 0.5em;
+    border: 0.1em solid #000;
+    position: relative;
+    @include var.flexCenter(center, unset, column, nowrap);
+
+    form {
+      @include var.flexCenter(unset, unset, column, nowrap);
+      width: 72.5%;
+      height: 80% !important;
+      // margin-bottom: 7.5%;
+
+      h1 {
+        font-weight: 700;
+        align-self: flex-start;
+        font-family: roboto-medium;
+        margin: var.$h1-top-margin 0 0 0;
+      }
+
+      .terms-div {
+        margin: 1.5em 0;
+        width: 100%;
+        align-self: center !important;
+        @include var.flexCenter(unset, center, row, nowrap);
+
+        .terms-conditions-label {
+          padding: 0 0 0 1em;
+          font-family: roboto-light;
+          width: 90%;
+          letter-spacing: 0.025em;
+          line-height: 1.4;
+
+          .terms-conditions-label-span {
+            color: #064d65;
+            text-decoration: underline;
+            font-weight: bolder;
+
+            &:hover {
+              color: var.$dark-greenish-blue;
+              cursor: pointer;
+            }
+          }
+        }
+
+        input#termsConditions {
+          transform: translateY(50%) scale(1.5);
+        }
+      }
+
+      label {
+        font-weight: 900;
+        padding-top: 10%;
+        word-break: normal;
+
+        &:first-child {
+          padding-top: 7.5%;
+        }
+      }
+
+      input[type="text"] {
+        background-color: var.$input-bg-color;
+        color: var.$grayish-black;
+        border: 0.01em solid var.$grayish-black;
+        border-radius: 0.25em;
+        align-self: center;
+        height: 2.5rem;
+        width: 100% !important;
+        font-size: 1.25rem;
+        padding: 1.15em;
+        margin-top: 0.25em;
+        transition: 0.1s border linear;
+
+        &:focus {
+          outline: none;
+          border: 0.05em solid #000000;
+        }
+
+        &::placeholder {
+          color: var.$grayish-black;
+          font-size: 0.75em;
+        }
+      }
+
+      button[type="submit"] {
+        background-color: #064d65;
+        color: #ffffff;
+        border: transparent;
+        border-radius: 0.25em;
+        align-self: center;
+        min-height: 3.5em;
+        width: 100%;
+        margin: 0 0 1em 0;
+        font-size: 1rem;
+
+        &:hover {
+          cursor: pointer;
+          background-color: var.$dark-greenish-blue;
+        }
+      }
+    }
+  }
+
+  .left,
+  .right {
+    width: 25rem;
+    height: 30rem;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .container {
+    @include var.flexCenter(center, center, row, wrap);
+
+    .right {
+      h1 {
+        align-self: center;
+      }
+
+      form {
+        width: 70%;
+
+        #terms {
+          width: 100%;
+          position: relative;
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 1023px) and (min-width: 426px) {
+  .container {
+    margin: 3em 0;
+    height: max-content;
+
+    .left {
+      border-radius: var.$left-right-border-radius var.$left-right-border-radius
+        0 0;
+    }
+
+    .right {
+      border-radius: 0 0 var.$left-right-border-radius
+        var.$left-right-border-radius;
+    }
+  }
+}
+
+@media only screen and (max-width: 425px) {
+  body {
+    background-image: none;
+    width: 100%;
+  }
+
+  .container {
+    width: 100%;
+    margin: 0;
+
+    .left,
+    .right {
+      border: none;
+      border-radius: 0% 0% 0% 0% !important;
+      width: 100%;
+    }
+
+    .left {
+      #iphone-img {
+        transform: scaleX(0.9);
+      }
+    }
+
+    .right {
+      form {
+        .terms-div {
+          margin: 2em 0 !important;
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 375px) {
+  .container {
+    .left {
+      #iphone-img {
+        width: 100%;
+      }
+    }
+
+    .right {
+      form {
+        width: 75%;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 325px) {
+  .container {
+    .left {
+      #iphone-img {
+        transform: scaleX(1.1);
+      }
+    }
+
+    .right {
+      form {
+        width: 80%;
+      }
+    }
+  }
+}

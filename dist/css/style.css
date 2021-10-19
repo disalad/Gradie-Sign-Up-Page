@@ -1,0 +1,248 @@
+@font-face {
+  font-family: roboto-medium;
+  src: url(../fonts/Roboto/Roboto-Medium.ttf);
+}
+@font-face {
+  font-family: roboto-regular;
+  src: url(../fonts/Roboto/Roboto-Regular.ttf);
+}
+@font-face {
+  font-family: roboto-light;
+  src: url(../fonts/Roboto/Roboto-Light.ttf);
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: roboto-regular;
+}
+
+body {
+  background-image: url(../../src/images/Background.png);
+  background-size: cover !important;
+  display: grid;
+  place-items: center;
+  min-height: 100vh;
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-flow: row wrap;
+  height: 100vh;
+}
+.container .left {
+  background-color: #0f3f50;
+  border-top-left-radius: 0.5em;
+  border-bottom-left-radius: 0.5em;
+  border: 0.1em solid #000;
+  position: relative;
+  display: grid;
+  align-items: center;
+  justify-content: center;
+  grid-template-rows: repeat(3, 1fr);
+}
+.container .left #left-titles {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-flow: column nowrap;
+  height: 25%;
+  margin-top: 0.25em;
+  position: relative;
+  top: -1em;
+}
+.container .left #left-titles h1 {
+  color: #ffffff;
+  font-size: 2em;
+  font-weight: 900;
+}
+.container .left #left-titles h2 {
+  font-weight: 700;
+  font-family: roboto-light;
+  font-size: 0.85em;
+  color: #b8cfd8;
+  margin-top: 0.5em;
+  letter-spacing: 0.1em;
+}
+.container .left #iphone-img {
+  width: 100% !important;
+  height: 100%;
+  position: absolute;
+  bottom: 0;
+}
+.container .right {
+  background-color: #ffffff;
+  border-top-right-radius: 0.5em;
+  border-bottom-right-radius: 0.5em;
+  border: 0.1em solid #000;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: unset;
+  flex-flow: column nowrap;
+}
+.container .right form {
+  display: flex;
+  align-items: unset;
+  justify-content: unset;
+  flex-flow: column nowrap;
+  width: 72.5%;
+  height: 80% !important;
+}
+.container .right form h1 {
+  font-weight: 700;
+  align-self: flex-start;
+  font-family: roboto-medium;
+  margin: 1em 0 0 0;
+}
+.container .right form .terms-div {
+  margin: 1.5em 0;
+  width: 100%;
+  align-self: center !important;
+  display: flex;
+  align-items: unset;
+  justify-content: center;
+  flex-flow: row nowrap;
+}
+.container .right form .terms-div .terms-conditions-label {
+  padding: 0 0 0 1em;
+  font-family: roboto-light;
+  width: 90%;
+  letter-spacing: 0.025em;
+  line-height: 1.4;
+}
+.container .right form .terms-div .terms-conditions-label .terms-conditions-label-span {
+  color: #064d65;
+  text-decoration: underline;
+  font-weight: bolder;
+}
+.container .right form .terms-div .terms-conditions-label .terms-conditions-label-span:hover {
+  color: #0f3f50;
+  cursor: pointer;
+}
+.container .right form .terms-div input#termsConditions {
+  transform: translateY(50%) scale(1.5);
+}
+.container .right form label {
+  font-weight: 900;
+  padding-top: 10%;
+  word-break: normal;
+}
+.container .right form label:first-child {
+  padding-top: 7.5%;
+}
+.container .right form input[type=text] {
+  background-color: #fff;
+  color: #a29a9a;
+  border: 0.01em solid #a29a9a;
+  border-radius: 0.25em;
+  align-self: center;
+  height: 2.5rem;
+  width: 100% !important;
+  font-size: 1.25rem;
+  padding: 1.15em;
+  margin-top: 0.25em;
+  transition: 0.1s border linear;
+}
+.container .right form input[type=text]:focus {
+  outline: none;
+  border: 0.05em solid #000000;
+}
+.container .right form input[type=text]::placeholder {
+  color: #a29a9a;
+  font-size: 0.75em;
+}
+.container .right form button[type=submit] {
+  background-color: #064d65;
+  color: #ffffff;
+  border: transparent;
+  border-radius: 0.25em;
+  align-self: center;
+  min-height: 3.5em;
+  width: 100%;
+  margin: 0 0 1em 0;
+  font-size: 1rem;
+}
+.container .right form button[type=submit]:hover {
+  cursor: pointer;
+  background-color: #0f3f50;
+}
+.container .left,
+.container .right {
+  width: 25rem;
+  height: 30rem;
+}
+
+@media screen and (max-width: 767px) {
+  .container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-flow: row wrap;
+  }
+  .container .right h1 {
+    align-self: center;
+  }
+  .container .right form {
+    width: 70%;
+  }
+  .container .right form #terms {
+    width: 100%;
+    position: relative;
+  }
+}
+@media only screen and (max-width: 1023px) and (min-width: 426px) {
+  .container {
+    margin: 3em 0;
+    height: max-content;
+  }
+  .container .left {
+    border-radius: 0.5em 0.5em 0 0;
+  }
+  .container .right {
+    border-radius: 0 0 0.5em 0.5em;
+  }
+}
+@media only screen and (max-width: 425px) {
+  body {
+    background-image: none;
+    width: 100%;
+  }
+
+  .container {
+    width: 100%;
+    margin: 0;
+  }
+  .container .left,
+.container .right {
+    border: none;
+    border-radius: 0% 0% 0% 0% !important;
+    width: 100%;
+  }
+  .container .left #iphone-img {
+    transform: scaleX(0.9);
+  }
+  .container .right form .terms-div {
+    margin: 2em 0 !important;
+  }
+}
+@media only screen and (max-width: 375px) {
+  .container .left #iphone-img {
+    width: 100%;
+  }
+  .container .right form {
+    width: 75%;
+  }
+}
+@media only screen and (max-width: 325px) {
+  .container .left #iphone-img {
+    transform: scaleX(1.1);
+  }
+  .container .right form {
+    width: 80%;
+  }
+}
+
+/*# sourceMappingURL=style.css.map */

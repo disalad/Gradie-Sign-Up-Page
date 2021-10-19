@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./dist/css/style.css" />
+    <title>Codewell Gradie Sign Up</title>
+  </head>
+
+  <body>
+    <div class="container">
+      <div class="left">
+        <div id="left-titles">
+          <h1>Gradie</h1>
+          <h2>Beautiful Gradients in Seconds</h2>
+        </div>
+        <img
+          src="./src/images/iPhone Mockup.png"
+          alt="Picture of a mobile phone"
+          id="iphone-img"
+        />
+      </div>
+      <div class="right">
+        <form action="index2.php" method="post">
+          <h1>Login</h1>
+          <label for="email">Email</label>
+          <input type="text" name="email" placeholder="john@example.com" />
+          <label for="passwd">Password</label>
+          <input
+            type="text"
+            name="passwd"
+            placeholder="At least 8 characters"
+          />
+          <div class="terms-div">
+            <input type="checkbox" name="terms" id="termsConditions" />
+            <label for="termsConditions" class="terms-conditions-label"
+              >By creating an account, you agree to the
+              <span class="terms-conditions-label-span"
+                >Terms & Conditions.</span
+              >
+            </label>
+          </div>
+
+          <button type="submit">Create an Account</button>
+        </form>
+      </div>
+    </div>
+  </body>
+</html>

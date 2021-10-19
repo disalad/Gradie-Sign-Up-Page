@@ -1,0 +1,34 @@
+//Margins
+$h1-top-margin: 1em;
+
+//colors
+$input-bg-color: #fff;
+$grayish-black: hsl(0, 4%, 62%);
+$dark-greenish-blue: #0f3f50;
+
+//Mixins
+@mixin flexCenter($align-items, $justify-content, $flex-direction, $flex-wrap) {
+  display: flex;
+  align-items: $align-items;
+  justify-content: $justify-content;
+  flex-flow: $flex-direction $flex-wrap;
+}
+
+//Border-Radius
+$left-right-border-radius: 0.5em;
+
+//Font-face
+@font-face {
+  font-family: roboto-medium;
+  src: url(../fonts/Roboto/Roboto-Medium.ttf);
+}
+
+@font-face {
+  font-family: roboto-regular;
+  src: url(../fonts/Roboto/Roboto-Regular.ttf);
+}
+
+@font-face {
+  font-family: roboto-light;
+  src: url(../fonts/Roboto/Roboto-Light.ttf);
+}
